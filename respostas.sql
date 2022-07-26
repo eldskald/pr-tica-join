@@ -1,3 +1,4 @@
 SELECT users.id, users.name, cities.name as cities FROM users JOIN cities ON cities.id = users."cityId"
 SELECT testimonials.id, writers.name as writer, recipients.name as recipient, testimonials.message FROM testimonials JOIN users writers ON writers.id = testimonials."writerId" JOIN users recipients ON recipients.id = testimonials."recipientId" ORDER BY testimonials.id;
 SELECT users.id, users.name, courses.name as course, schools.name as school, educations."endDate" FROM educations JOIN users ON users.id = 30 JOIN courses ON courses.id = educations."courseId" JOIN schools ON schools.id = educations."schoolId";
+SELECT users.id, users.name, roles.name as role, companies.name as company, experiences."startDate" FROM experiences JOIN users ON users.id = 50 JOIN roles ON roles.id = experiences."roleId" JOIN companies ON companies.id = experiences."companyId" WHERE experiences."endDate" IS NULL;
